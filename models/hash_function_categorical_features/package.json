@@ -1,0 +1,16 @@
+{
+  "name": "checkmd5",
+  "version": "1.0.0",
+  "main": "hashing.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "spark-md5": "^3.0.2"
+  }
+}
