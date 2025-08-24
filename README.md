@@ -69,11 +69,11 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 - **Tools**: BeautifulSoup, Whois, Regex, uBlock Origin
 ---
 ## Repository Layout (key parts)
--backend/app/server.py — Flask API (/get_api_key, /, /submit_new_phish_urls)
--backend/app/data_handler.py — feature orchestration, validation (label, proba), thresholded DB inserts, daily routine, Git publishing, API-key issuance
--backend/app/models.py — SQLAlchemy models + DB bootstrap
--backend/app/local_extract_all_stages/ — Stage 1/2/3 extractors
--extension/ — all WebExtension code (core, analysis, processing, uBO hooks, worker, assets)
+- backend/app/server.py — Flask API (/get_api_key, /, /submit_new_phish_urls).
+- backend/app/data_handler.py — feature orchestration, validation (label, proba), thresholded DB inserts, daily routine, Git publishing, API-key issuance
+- backend/app/models.py — SQLAlchemy models + DB bootstrap
+- backend/app/local_extract_all_stages/ — Stage 1/2/3 extractors
+- extension/ — all WebExtension code (core, analysis, processing, uBO hooks, worker, assets)
 
 ---
 
