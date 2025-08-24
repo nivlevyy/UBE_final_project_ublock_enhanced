@@ -167,3 +167,10 @@ curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
 This project will be licensed under the GPL License.
 
 ---
+<h2 align="center">
+  <a><img src="https://github.com/nivlevyy/UBE-Ublock_Enhance/blob/main/image/UBE-logo.jpeg" width="300"></a>
+<br>
+Pictures of the project:
+<br>
+</h2>
+
