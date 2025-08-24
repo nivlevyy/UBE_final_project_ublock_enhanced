@@ -152,7 +152,7 @@ curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/db_recent
 API_KEY="<paste-from-step-1>"
 curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
 #Run full pipeline including validating the data sent and updating the phishing black list in git then when other user's
-activating the extension they will be blocked by this phishy sites 
+#activating the extension the extension will block this phishy sites.
 ```
 ---
 ## Future Enhancements
