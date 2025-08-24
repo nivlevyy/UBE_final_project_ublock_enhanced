@@ -197,9 +197,7 @@ class data_handler:
 
     def _load_expected_features(self):
         """
-        טוען את רשימת הפיצ'רים שהמודל מצפה להם.
          backend/app/curr_model/features.json.
-        אם אין, משתמש ב-model.feature_names_in_ אם קיים.
         """
         try:
             base_dir = Path(__file__).resolve().parent
@@ -218,14 +216,7 @@ class data_handler:
         raise RuntimeError("No expected feature list found (features.json / feature_names_in_).")
 
     def _align_df_to_model(self, merged_df: pd.DataFrame) -> pd.DataFrame:
-        """
-        מנקה ומיישר את ה-DF לפי רשימת הפיצ'רים של המודל:
-        - מבטיח שעמודת URL קיימת (UPPERCASE)
-        - מוסיף עמודות חסרות כ-0
-        - זורק עמודות עודפות
-        - מסדר לפי הסדר המדויק שהמודל דורש
-        - ממיר לטיפוסים מספריים וממלא NaN ב-0
-        """
+
         expected = self._load_expected_features()
         df = merged_df.copy()
 
@@ -241,7 +232,6 @@ class data_handler:
 
         df = df[['URL'] + expected].copy()
 
-        # טיפוסים
         for c in expected:
             if df[c].dtype == bool:
                 df[c] = df[c].astype(int)

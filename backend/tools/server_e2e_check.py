@@ -1,5 +1,4 @@
 # backend/tools/server_e2e_check.py
-# בדיקות end-to-end לשרת: סטטוס, API key, שליחה תקינה/שגויה, rate limit, הרצת routine ובדיקת DB.
 
 import os
 import sys
@@ -45,7 +44,6 @@ def http_put(base, path, json_body: Any = None, headers: Optional[Dict[str, str]
         if isinstance(json_body, (dict, list)):
             r = requests.put(url, json=json_body, headers=headers, timeout=20)
         else:
-            # שליחה בלי JSON תקין (לבדיקת שגיאה)
             r = requests.put(url, data=json_body, headers=headers, timeout=20)
         try:
             return r.status_code, r.json()
@@ -72,19 +70,19 @@ def check_status_with_key(base, token):
 def send_invalid_payloads(base, token):
     h = {"X-API-KEY": token, "Content-Type": "application/json"}
 
-    # 1) גוף לא-JSON בכלל
+    # 1) not JSON
     code, body = http_put(base, "/submit_new_phish_urls", json_body="not-a-json", headers=h)
     _print("PUT /submit_new_phish_urls — invalid (not JSON)", {"status": code, "body": body})
 
-    # 2) daily_urls הוא מחרוזת במקום list
+    # 2) daily_urls string not list
     code, body = http_put(base, "/submit_new_phish_urls", json_body={"daily_urls": "https://evil"}, headers=h)
     _print("PUT /submit_new_phish_urls — invalid (daily_urls is str)", {"status": code, "body": body})
 
-    # 3) daily_urls רשימה אבל כוללת non-string
+    # 3) daily_urls list with non-string
     code, body = http_put(base, "/submit_new_phish_urls", json_body={"daily_urls": ["https://ok", 123]}, headers=h)
     _print("PUT /submit_new_phish_urls — invalid (non-string in list)", {"status": code, "body": body})
 
-    # 4) בלי כותרת X-API-KEY בכלל
+    # 4) without  X-API-KEY
     code, body = http_put(base, "/submit_new_phish_urls", json_body={"daily_urls": ["https://evil"]}, headers={"Content-Type": "application/json"})
     _print("PUT /submit_new_phish_urls — invalid (missing X-API-KEY)", {"status": code, "body": body})
 

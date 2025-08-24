@@ -1,5 +1,4 @@
 # backend/tools/full_stack_runner.py
-# מריץ שרת (אופציונלי), מחכה שיעלה, מריץ בדיקות E2E, מפעיל daily_routine מקומי, ובסוף סוגר.
 
 import os
 import sys
