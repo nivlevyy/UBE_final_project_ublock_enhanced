@@ -159,7 +159,7 @@ curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
 ## project pictures:
 
 <h2 align="center">
-<strong align="center">uBlock Origin Popup:</strong><br>
+<strong align="center">UBE Popup:</strong><br>
     <a><img src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/extension.jpeg" width="300"></a>
 </h2>
 
