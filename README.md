@@ -81,8 +81,8 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 
 ### Running the Server (local)
 #### Prereqs
--Python 3.10+
--Virtualenv + dependencies installed (requirements.txt)
+- Python 3.10 +
+- Virtualenv + dependencies installed (requirements.txt)
 
 **Setup**
 ```bash
@@ -107,12 +107,12 @@ python -m backend.app.server
 ```
 
 ### Running the Extension (local):
-1. Load this extension unpacked:
-  - Firefox: about:debugging#/runtime/this-firefox → “Load Temporary Add-on…” → select *manifest.json* from the UBE_final_project_ublock_enhanced/extension
-  /uBlock-UBE.firefox.final.
-2.click on the ublock  icon (in the top right screen you will have the extension icon)
-3.click on the AI button in the bottom left of the pop up window (to activate the ML model to analyze any further pages while browsing)
-4.Browse normally, the extension will flag phishing sites in RED and a safe ones in GREEN.
+Load this extension unpacked:
+1. open Firefox.
+2. In Firefox: → about:debugging#/runtime/this-firefox → press on “Load Temporary Add-on…” → select *manifest.json* from the UBE_final_project_ublock_enhanced/extension/uBlock-UBE.firefox.final.
+3. click on the ublock  icon (in the top right screen you will have the extension icon)
+4. click on the AI button in the bottom left of the pop up window (to activate the ML model to analyze any further pages while browsing)
+5. Browse normally, the extension will flag phishing sites in RED and a safe ones in GREEN.
 
 ---
 Endpoints (quick test by hand)
