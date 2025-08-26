@@ -63,7 +63,7 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 
 ## Technologies Used:
 - **Languages**: JavaScript, Python
-- **Machine Learning**: TensorFlow.js, Scikit-learn, River
+- **Machine Learning**: TensorFlow.js, Scikit-learn
 - **Frontend**: HTML, CSS, JS (WebExtension APIs)
 - **Backend (Optional)**: NAS server for blacklist/model update management
 - **Tools**: BeautifulSoup, Whois, Regex, uBlock Origin
