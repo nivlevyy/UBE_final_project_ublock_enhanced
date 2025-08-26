@@ -52,7 +52,6 @@ class data_handler:
         dbg = str(os.environ.get("DEBUG", "")).strip().lower()
         if dbg in ("1", "true", "yes", "y"):
             print ("got the api for github")
-            return "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"
         return os.environ.get("UBE_API_KEY")
 
     @staticmethod
