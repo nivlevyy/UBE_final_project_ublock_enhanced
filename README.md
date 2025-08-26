@@ -5,7 +5,7 @@ AI-Powered Phishing Detection Extension
 <br>
 </h1>
 
-## Overview
+## Overview:
 
 This project is an AI-powered phishing detection system integrated directly into the **uBlock Origin** browser extension. It enhances traditional ad-blockers by enabling real-time detection of phishing threats using machine learning. The extension analyzes various website elements including URLs, domain metadata, HTML structure, and JavaScript behavior to identify suspicious activity.
 
@@ -13,7 +13,7 @@ Unlike static blacklists, UBE adds a dynamic intelligence layer. The extension r
 
 ---
 
-## Architecture & Detection Pipeline
+## Architecture & Detection Pipeline:
 
 ### Client (Browser Extension)
 Hooks into navigation events and page activity.
@@ -42,33 +42,33 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 
 ---
 
-## Core Features
+## Core Features:
 
-### The ML Model Core Stages
+### The ML Model Core Stages:
 - **Stage 1**: URL lexical feature analysis .
 - **Stage 2**: Domain reputation, WHOIS-based features and much more.
 - **Stage 3**: HTML and JavaScript structural and behavioral analysis.
 
-### Browser Integration
+### Browser Integration:
 - Built as an extension for **Mozilla Firefox**.
 - Hooks into browser events to inspect webpages in real time.
 - Enhances uBlock Origin's static list with dynamic, intelligent detection.
 
-### Privacy and Performance
+### Privacy and Performance:
 - All detection is performed locally.
 - No sensitive data is sent to external servers.
 - Optional cloud-based backend for list/model updates (NAS).
 
 ---
 
-## Technologies Used
+## Technologies Used:
 - **Languages**: JavaScript, Python
 - **Machine Learning**: TensorFlow.js, Scikit-learn, River
 - **Frontend**: HTML, CSS, JS (WebExtension APIs)
 - **Backend (Optional)**: NAS server for blacklist/model update management
 - **Tools**: BeautifulSoup, Whois, Regex, uBlock Origin
 ---
-## Repository Layout (key parts)
+## Repository Layout (key parts):
 - backend/app/server.py — Flask API (/get_api_key, /, /submit_new_phish_urls).
 - backend/app/data_handler.py — feature orchestration, validation (label, proba), thresholded DB inserts, daily routine, Git publishing, API-key issuance
 - backend/app/models.py — SQLAlchemy models + DB bootstrap
@@ -77,7 +77,7 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 
 ---
 
-## Installation & Usage
+## Installation & Usage:
 
 ### Running the Server (local)
 #### Prereqs
@@ -90,7 +90,7 @@ python -m venv .venv
 source .venv/bin/activate           # PowerShell: .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
-#### Recommended local flags
+#### Recommended local flags:
 
 **Windows PowerShell (local ide terminal is prefered )**
 ```powershell
@@ -106,7 +106,7 @@ export UBE_SKIP_PUBLISH=1   # don't push to Git during local tests
 python -m backend.app.server
 ```
 
-### Running the Extension (local)
+### Running the Extension (local):
 1. Load this extension unpacked:
   - Firefox: about:debugging#/runtime/this-firefox → “Load Temporary Add-on…” → select *manifest.json* from the UBE_final_project_ublock_enhanced/extension
   /uBlock-UBE.firefox.final.
@@ -147,7 +147,7 @@ curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/db_recent
 #get's the urls that are current in the data base  
 ```
 
-6) Run full update pipeline 
+6) Run full update pipeline :
 ```bash
 API_KEY="<paste-from-step-1>"
 curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
@@ -155,17 +155,127 @@ curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
 #activating the extension the extension will block this phishy sites.
 ```
 ---
-## Future Enhancements
+
+## project pictures:
+
+<h2 align="center">
+<strong align="center">uBlock Origin Popup:</strong><br>
+    <a><img src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/extension.jpeg" width="300"></a>
+</h2>
+
+<h1 align="center">
+<br>
+Analysis: Unsafe
+<br>
+</h1>
+
+<table align="center" role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <colgroup>
+    <col width="50%">
+    <col width="50%">
+  </colgroup>
+  <tr>
+    <th align="center">while browsing (outer)</th>
+    <th align="center">when clicked (inner)</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <a href="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/phishing%20%28red%20indicator%29.jpeg?raw=1">
+        <img
+          src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/phishing%20%28red%20indicator%29.jpeg?raw=1"
+          alt="Unsafe badge while browsing (red indicator)"
+          height="500">
+      </a>
+    </td>
+    <td align="center" valign="top">
+      <a href="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/phishing.jpeg?raw=1">
+        <img
+          src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/phishing.jpeg?raw=1"
+          alt="uBlock Origin popup with 'Unsafe' banner"
+          height="420">
+      </a>
+    </td>
+  </tr>
+</table>
+
+<h1 align="center">
+<br>
+Analysis: safe
+<br>
+</h1>
+
+<table align="center" role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <colgroup>
+    <col width="50%">
+    <col width="50%">
+  </colgroup>
+  <tr>
+    <th align="center">while browsing (outer)</th>
+    <th align="center">when clicked (inner)</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <a href="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/safe(green%20indicator) .jpeg?raw=1">
+        <img
+          src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/safe(green%20indicator) .jpeg?raw=1"
+          alt="Unsafe badge while browsing (red indicator)"
+          height="700">
+      </a>
+    </td>
+    <td align="center" valign="top">
+      <a href="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/safe.jpeg?raw=1">
+        <img
+          src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/safe.jpeg?raw=1"
+          alt="uBlock Origin popup with 'Unsafe' banner"
+          height="420">
+      </a>
+    </td>
+  </tr>
+</table>
+
+<h1 align="center">
+<br>
+Full Analysis View Button & Analysis Screen:
+<br>
+</h1>
+
+<table align="center" role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <colgroup>
+    <col width="50%">
+    <col width="50%">
+  </colgroup>
+  <tr>
+    <th align="center">while browsing (outer)</th>
+    <th align="center">when clicked (inner)</th>
+  </tr>
+  <tr>
+    <td align="center" valign="top">
+      <a href="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/UBE_analysis button.jpeg?raw=1">
+        <img
+          src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/UBE_analysis button.jpeg?raw=1"
+          alt="Unsafe badge while browsing (red indicator)"
+          height="250">
+      </a>
+    </td>
+    <td align="center" valign="top">
+      <a href="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/UBE_analysis.jpeg?raw=1">
+        <img
+          src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/UBE_analysis.jpeg?raw=1"
+          alt="uBlock Origin popup with 'Unsafe' banner"
+          height="800">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+
+---
+## Future Enhancements:
 - Visual/NLP phishing detection (Stage 4)
 - Advanced whitelist/blacklist learning
 - User feedback mechanism for training data
 - Dashboard for managing blocked threats
 
----
-## project pictures 
-<h2 align="center" id="ube-panel">UBE Analysis Panel</h2>
-  <a><img src="https://github.com/nivlevyy/UBE-Ublock_Enhance/blob/main/image/UBE_analysis.jpeg" width="700"></a>
-</h2>
-
-## License
+## License:
 This project will be licensed under the GPL License.
