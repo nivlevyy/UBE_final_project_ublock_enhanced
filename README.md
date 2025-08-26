@@ -219,7 +219,7 @@ Analysis: safe
         <img
           src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/safe(green%20indicator) .jpeg?raw=1"
           alt="Unsafe badge while browsing (red indicator)"
-          height="700">
+          height="800">
       </a>
     </td>
     <td align="center" valign="top">
@@ -245,8 +245,7 @@ Full Analysis View Button & Analysis Screen:
     <col width="50%">
   </colgroup>
   <tr>
-    <th align="center">while browsing (outer)</th>
-    <th align="center">when clicked (inner)</th>
+    
   </tr>
   <tr>
     <td align="center" valign="top">
