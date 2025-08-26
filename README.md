@@ -162,15 +162,10 @@ curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
 - Dashboard for managing blocked threats
 
 ---
+## project pictures 
+<h2 align="center" id="ube-panel">UBE Analysis Panel</h2>
+  <a><img src="https://github.com/nivlevyy/UBE-Ublock_Enhance/blob/main/image/UBE_analysis.jpeg" width="700"></a>
+</h2>
 
 ## License
 This project will be licensed under the GPL License.
-
----
-<h2 align="center">
-  <a><img src="https://github.com/nivlevyy/UBE-Ublock_Enhance/blob/main/image/UBE-logo.jpeg" width="300"></a>
-<br>
-Pictures of the project:
-<br>
-</h2>
-
