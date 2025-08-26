@@ -137,14 +137,14 @@ curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/
 ```bash
 API_KEY="<paste-from-step-1>"
 curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/daily_submissions
-#get's the daily submitions 
+#gets the daily submitions 
 ```
 
 5) Get current db url's
 ```bash
 API_KEY="<paste-from-step-1>"
 curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/db_recent
-#get's the urls that are current in the data base  
+#gets the urls that are current in the data base  
 ```
 
 6) Run full update pipeline :
@@ -262,13 +262,22 @@ Full Analysis View Button & Analysis Screen:
         <img
           src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/UBE_analysis.jpeg?raw=1"
           alt="uBlock Origin popup with 'Unsafe' banner"
-          height="800">
+          height="700">
       </a>
     </td>
   </tr>
 </table>
 
+<h1 align="center">
+<br>
+View My Blacklist & Block Screen (after phishing confirmation):
+<br>
+</h1>
 
+<h2 align="center">
+<strong align="center">uBlock Origin Block Screen (after phishing confirmation):</strong><br>
+    <a><img src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/live blocking.jpeg" width="1000"></a>
+</h2>
 
 ---
 ## Future Enhancements:
