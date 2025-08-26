@@ -20,7 +20,7 @@ Hooks into navigation events and page activity.
 Checks extended static lists first (uBO + optional dynamic list).
 If a URL isn’t covered by those static lists, a local model (Web Worker) scores it using staged features.
 Visual indicators (icon/badge/banner/notification) warn users in real time.
-URLs that look malicious are added to a small local batch queue and periodically flushed to the server with a uniq user API KEY.
+URLs that look malicious are added to a small local batch queue and periodically flushed to the server with a unique user API KEY.
 
 ### Server (Validation + Daily Routine)
 Receives batched candidates from many clients.
@@ -36,9 +36,9 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 1.  User navigates → extension gathers fast features and runs the local model.
 2. If the page looks phishy, its URL is queued client-side.
 3. Queue flushes when it reaches a small batch size (e.g., 10) or after a short timer.
-4. Server receives the data only with uniq active user API KEY, deduplicates existing url's into a daily buffer.
+4. Server receives the data with a per-user API key and deduplicates URLs into a daily buffer.
 5. A daily routine runs: full extraction → model scoring → thresholded inserts into phish_db.
-6. Optionally, the server publishes an updated plain-text list to GitHub (for uBO to subscribe to).
+6. The server publishes an updated plain-text list to GitHub (for uBO to subscribe to).
 
 ---
 
@@ -46,7 +46,7 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 
 ### The ML Model Core Stages:
 - **Stage 1**: URL lexical feature analysis .
-- **Stage 2**: Domain reputation, WHOIS-based features and much more.
+- **Stage 2**: Domain reputation, WHOIS-based features and more.
 - **Stage 3**: HTML and JavaScript structural and behavioral analysis.
 
 ### Browser Integration:
@@ -133,14 +133,14 @@ curl -i http://localhost:8000/
 API_KEY="<paste-from-step-1>"
 curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/
 ```
-4) Get current daily submissions
+4) Returns today's submissions
 ```bash
 API_KEY="<paste-from-step-1>"
 curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/daily_submissions
 #gets the daily submitions 
 ```
 
-5) Get current db url's
+5) Returns recent URLs in the database
 ```bash
 API_KEY="<paste-from-step-1>"
 curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/db_recent
@@ -150,8 +150,8 @@ curl -s -H "X-API-KEY: $API_KEY" http://localhost:8000/debug/db_recent
 6) Run full update pipeline :
 ```bash
 API_KEY="<paste-from-step-1>"
-curl -s -X POST "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
-#Run full pipeline including validating the data sent and updating the phishing black list in git then when other user's
+curl -s -X POST ‎-H‎ "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_daily
+#Run full pipeline including validating the data sent and updating the phishing blocklist in git then when other user's
 #activating the extension the extension will block this phishy sites.
 ```
 ---
@@ -281,4 +281,4 @@ Full Analysis View Button & Analysis Screen:
 - Dashboard for managing blocked threats
 
 ## License:
-This project will be licensed under the GPL License.
+This project is licensed under the GPL-3.0 License. See **LICENSE** for details.
