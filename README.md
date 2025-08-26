@@ -268,11 +268,6 @@ Full Analysis View Button & Analysis Screen:
   </tr>
 </table>
 
-<h1 align="center">
-<br>
-View My Blacklist & Block Screen (after phishing confirmation):
-<br>
-</h1>
 
 <h2 align="center">
 <strong align="center">uBlock Origin Block Screen (after phishing confirmation):</strong><br>
