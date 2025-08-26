@@ -235,7 +235,7 @@ Analysis: safe
 
 <h1 align="center">
 <br>
-Full Analysis View Button & Analysis Screen:
+Full Analysis View Button & Full Analysis Screen:
 <br>
 </h1>
 
