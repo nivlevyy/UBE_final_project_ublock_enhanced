@@ -34,7 +34,7 @@ Static lists alone lag behind new campaigns; cloud-only systems trade away priva
 
 ### Data flow (end-to-end):
 1.  User navigates → extension gathers fast features and runs the local model.
-2. If the page looks phishy, its URL is queued client-side.
+2. If the page looks phishy, its URL is queued into phishing list on client-side.
 3. Queue flushes when it reaches a small batch size (e.g., 10) or after a short timer.
 4. Server receives the data with a per-user API key and deduplicates URLs into a daily buffer.
 5. A daily routine runs: full extraction → model scoring → thresholded inserts into phish_db.
