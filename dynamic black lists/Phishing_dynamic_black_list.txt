@@ -1,1 +1,9 @@
-
+||bit.ly/fake$document,frame
+||github.com/nivlevyy/UBE_final_project_ublock_enhanced/main/dynamic%20black%20lists/Phishing_dynamic_black_list.txt$document,frame
+||idpprod.mta.ac.il/nidp/app/login$document,frame
+||il-gov.com/voucherspa/318.php$document,frame
+||israelpost.ssil.help/set/$document,frame
+||linkin.bio/rvices-kvish6/$document,frame
+||login-secure-paypal.com^$all
+||maxibrant.com/kvish6-Serviceaspxcustomer-co.il/$document,frame
+||raw.githubusercontent.com/nivlevyy/UBE_final_project_ublock_enhanced/main/dynamic%20black%20lists/Phishing_dynamic_black_list.txt$document,frame
