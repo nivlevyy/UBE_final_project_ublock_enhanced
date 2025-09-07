@@ -1,4 +1,1 @@
-||bit.ly/fake$document,frame
-||il-gov.com/voucherspa/318.php$document,frame
-||israelpost.ssil.help/set/$document,frame
-||login-secure-paypal.com^$all
+
