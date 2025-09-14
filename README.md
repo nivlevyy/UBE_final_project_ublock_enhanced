@@ -157,7 +157,10 @@ curl -s -X POST ‎-H‎ "X-API-KEY: $API_KEY" http://localhost:8000/debug/run_d
 ---
 
 ## project pictures:
+<h2 align="center">
+<strong align="center">UBE demo:</strong><br>  </h2>
 
+https://github.com/user-attachments/assets/d4f71fe5-4c12-4068-80e5-33ba30383948
 <h2 align="center">
 <strong align="center">UBE Popup:</strong><br>
     <a><img src="https://github.com/nivlevyy/UBE_final_project_ublock_enhanced/blob/main/image/extension.jpeg" width="300"></a>
